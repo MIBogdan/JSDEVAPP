@@ -5,7 +5,6 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ user.nume }} {{ user.prenume }}</h5>
                     <p class="card-text">{{user.email}}</p>
-                    <img src="{{user.picture}}" alt="" width="150" height="150">
                     <a [routerLink]="['/profil', user.id]" class="btn btn-primary">Vezi mai mult</a>
                 </div>
             </div>

@@ -8,8 +8,8 @@ export interface BasicUser {
     email:string,
     telefon: string,
     dataadaugare?:Date,
-    picture?:string,
-    actiune?:string
+    actiune?:string,
+    poza?:string
   }
   export interface UserWithDetails extends BasicUser, User{
     userId: number,
