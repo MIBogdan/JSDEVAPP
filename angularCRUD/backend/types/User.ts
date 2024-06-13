@@ -4,12 +4,13 @@ export interface BasicUser {
   export interface User extends BasicUser {
     nume: string,
     prenume: string,
-    datanastere:Date, //string
     email:string,
     telefon: string,
+    cnp?:string,
+    datanastere:Date, //string
     dataadaugare?:Date,
-    actiune?:string,
-    poza?:string
+    poza?:string,
+    actiune?:string
   }
   export interface UserWithDetails extends BasicUser, User{
     userId: number,

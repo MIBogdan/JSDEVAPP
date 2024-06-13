@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <h1>Titlu unui articol</h1>
+    <h1> Titlul unui articol</h1>
     <p>
       articol works!
     </p>

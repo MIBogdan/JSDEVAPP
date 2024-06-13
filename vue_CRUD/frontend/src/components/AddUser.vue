@@ -46,17 +46,6 @@
         />
       </div>
       <div class="form-group">
-        <label for="poza">Poza</label>
-        <input
-          class="form-control"
-          id="poza"
-          required
-          v-model="user.poza"
-          name="poza"
-          type="url"
-        />
-      </div>
-      <div class="form-group">
         <label for="datanastere">Data nastere</label>
         <input
           class="form-control"
@@ -97,7 +86,6 @@ export default {
         prenume: this.user.prenume,
         email: this.user.email,
         telefon: this.user.telefon,
-        poza: this.user.poza,
         datanastere: this.user.datanastere,
       };
       UserService.create(data)

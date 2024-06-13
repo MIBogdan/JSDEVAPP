@@ -21,6 +21,7 @@ const findAll = (callback) => {
                 telefon: row.telefon,
                 dataadaugare: row.dataadaugare,
                 poza: row.poza,
+                cnp: row.cnp,
                 actiune: "",
             };
             users.push(user);
@@ -42,10 +43,11 @@ const findOne = (userId, callback) => {
             nume: row.nume,
             prenume: row.prenume,
             email: row.email,
-            datanastere: row.datanastere,
             telefon: row.telefon,
-            poza: row.poza,
+            cnp: row.cnp,
+            datanastere: row.datanastere,
             //dataadaugare: row.dataadaugare,
+            poza: row.poza
         };
         callback(null, user);
     });
@@ -53,9 +55,9 @@ const findOne = (userId, callback) => {
 exports.findOne = findOne;
 // create user
 const create = (user, callback) => {
-    const queryString = "INSERT INTO jsusers (nume, prenume, email, datanastere, telefon, poza) VALUES (?, ?, ?, ?, ?, ?)";
+    const queryString = "INSERT INTO jsusers (nume, prenume, email, telefon, cnp, datanastere, poza) VALUES (?, ?, ?, ?, ?, ?, ?)";
     console.log(user);
-    db_1.db.query(queryString, [user.nume, user.prenume, user.email, user.datanastere, user.telefon, user.poza], (err, result) => {
+    db_1.db.query(queryString, [user.nume, user.prenume, user.email, user.telefon, user.cnp, user.datanastere, user.poza], (err, result) => {
         if (err) {
             callback(err);
         }
@@ -66,8 +68,8 @@ const create = (user, callback) => {
 exports.create = create;
 // update user
 const update = (user, callback) => {
-    const queryString = `UPDATE jsusers SET nume=?, prenume=?,email=?, telefon=?, datanastere=?, poza=? WHERE id=?`;
-    db_1.db.query(queryString, [user.nume, user.prenume, user.email, user.telefon, user.datanastere, user.id, user.poza], (err, result) => {
+    const queryString = `UPDATE jsusers SET nume=?, prenume=?, email=?, telefon=?, cnp=?, datanastere=?, poza=?  WHERE id=?`;
+    db_1.db.query(queryString, [user.nume, user.prenume, user.email, user.telefon, user.cnp, user.datanastere, user.poza, user.id], (err, result) => {
         if (err) {
             callback(err);
         }

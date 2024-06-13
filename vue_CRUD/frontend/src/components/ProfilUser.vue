@@ -29,23 +29,6 @@
           v-model="currentUser.email"
         />
       </div>
-
-      <div class="test">
-          <div class="form-group">
-              <label for="poza">Poza</label>
-              <input
-                type="url"
-                class="form-control"
-                id="poza"
-                v-model="currentUser.poza"
-              />
-          </div>
-
-        <img :src="currentUser.poza" class="picHeight"/>
-      </div>
-      
-
-      
     </form>
 
     <button
@@ -76,8 +59,8 @@ export default {
     getUser(id) {
       UserService.get(id)
         .then((response) => {
-          this.currentUser = response.data["data"];
-          console.log(response.data["data"]);
+          this.currentUser = response.data["users"];
+          console.log(response.data["users"]);
         })
         .catch((e) => {
           console.log(e);
@@ -121,16 +104,5 @@ export default {
 .edit-form {
   max-width: 300px;
   margin: auto;
-}
-
-.picHeight {
-  width: 150px;
-}
-
-.test {
-  display: flex;
-  flex-direction: row;
-  width: 50em;
-  gap: 2em;
 }
 </style>

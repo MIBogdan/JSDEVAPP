@@ -32,7 +32,6 @@
           <div class="card-body">
             <h5 class="card-title">{{ user.nume }} {{ user.prenume }}</h5>
             <p class="card-text">{{ user.id }}</p>
-            <img :src="user.poza" class="picHeight"/>
             <router-link
               :to="'/users/' + user.id"
               class="btn btn-outline-primary me-2 mt-2"
@@ -119,17 +118,5 @@ export default {
   text-align: left;
   max-width: 750px;
   margin: auto;
-}
-
-.picHeight {
-  width: 150px;
-
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>
